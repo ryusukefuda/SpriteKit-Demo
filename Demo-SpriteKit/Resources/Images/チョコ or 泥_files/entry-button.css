@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+html, body {
+  background: transparent;
+}
+body {
+  overflow: hidden;
+}
+
+/*-- Style v2 --*/
+
+.button-container {
+  text-decoration: none;
+  display: block;
+  width: 49px;
+  padding-left: 1px;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.button-image {
+  float: left;
+  margin-left: -1px;
+}
+
+.counter {
+  background: url(/images/entry-button/button-bg-right.gif) no-repeat right top;
+  text-align: center;
+  font-weight: bold;
+  line-height: 21px;
+  color: #2c6ebd;
+  font-size: 93%;
+  display: block;
+}
+
+
+.vbutton-container  {
+  text-decoration: none;
+  display: block;
+  width: 48px;
+  height: 48px;
+  background: #2c6ebd;
+  margin:0px 1px;
+  padding:1px 0px;
+  position: relative;
+}
+
+.vbutton-inner {
+  background: #2c6ebd url(/images/entry-button/vbutton-bg.png) center top;
+  _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src='/images/entry-button/vbutton-bg.png');
+  _background-image: none;
+  _zoom: 1;
+  margin:0 -1px;
+  display: block;
+  height: 48px;
+  position: relative;
+  cursor: pointer; /* For IE 6/7 */
+}
+
+.vbutton-container .counter {
+  background: transparent;
+  line-height: 0.8;
+  padding-top: 8px;
+  color: #2c6ebd;
+}
+
+.vbutton-container .counter .count {
+  display: block;
+}
+
+.vbutton-container .counter .users {
+  display: block;
+  font-size: 80%;
+}
+
+
+.button-counter {
+  padding-right: 1px;
+  width: 48px;
+}
+
+.counter-container {
+  padding: 1px 0;
+  background: #abc5e5;
+  display: block;
+}
+
+.counter-container .counter {
+  background: #eee;
+  background: #f7f9fc;
+  margin-right: -1px;
+  line-height: 18px;
+  color: #2c6ebd;
+  border-right: 1px solid #abc5e5;
+}
+
+
+/*-- Style v3 --*/
+
+.b-area-simple,
+.b-area-standard {
+  display: inline; zoom: 1; /* for IE 6, 7 */
+  display: inline-block;
+  height: 20px;
+}
+.b-area-simple {
+  position: relative;
+  padding-left: 28px;
+}
+.b-area-standard {
+  position: relative;
+  padding-left: 88px;
+}
+.b-area-standard.vertical {
+  width: 80px;
+  height: 60px;
+  padding-left: 0;
+}
+a.b-btn,
+a.b-count {
+  font-family: Arial;
+  font-size: 11px;
+  line-height: 18px;
+  color: #2D4C86;
+  text-decoration: none;
+}
+.b-area-standard.ja a.b-btn {
+  font-family: 'ヒラギノ角ゴ Pro W3', Hiragino Kaku Gothic Pro, 'メイリオ', Meiryo, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  line-height: 1;
+}
+.b-area-simple .b-btn,
+.b-area-standard .b-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.b-area-simple .b-btn,
+.b-area-simple .b-count,
+.b-area-standard .b-btn,
+.b-area-standard .b-count {
+  display: inline; zoom: 1; /* for IE 6, 7 */
+  display: inline-block;
+}
+.b-area-standard.vertical .b-btn {
+  position: absolute;
+  top: 40px;
+  display: block;
+}
+.b-area-simple .b-btn {
+  width: 20px;
+  height: 20px;
+  background: url("/images/entry-button/bbtn-s_v3.png") left 0px no-repeat;
+  background-size: 20px 40px;
+}
+.b-area-simple .b-btn:hover {
+  color: #193A68;
+  background: url("/images/entry-button/bbtn-s_v3.png") left -20px no-repeat;
+  background-size: 20px 40px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),(min-resolution: 2dppx){
+  .b-area-simple .b-btn, .b-area-simple .b-btn:hover {
+    background-image: url("/images/entry-button/bbtn-s_v3@2x.png");
+  }
+}
+
+.b-area-simple .b-btn span {
+  display: none;
+}
+.b-area-simple .b-count,
+.b-area-standard .b-count {
+  width: auto;
+  height: 18px;
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #B0C1D8;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+.b-area-simple .b-count:after,
+.b-area-simple .b-count:before,
+.b-area-standard .b-count:after,
+.b-area-standard .b-count:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  right: 100%;
+  position: absolute;
+  width: 0;
+}
+.b-area-simple .b-count:after,
+.b-area-standard .b-count:after {
+  border-width: 3px;
+  border-right-color: #FFF;
+  top: 6px;
+}
+.b-area-simple .b-count:before,
+.b-area-standard .b-count:before {
+  border-width: 5px;
+  border-right-color: #B0C1D8;
+  top: 4px;
+}
+.b-area-standard .b-btn {
+  width: 56px;
+  height: 19px;
+  padding: 1px 0 0 24px;
+  background: url("/images/entry-button/bbtn-l_v3.png") left 0px no-repeat;
+  background-size: 80px 40px;
+  text-decoration: none;
+  -webkit-text-shadow: 0 1px 0 #FFF;
+  text-shadow: 0 1px 0 #FFF;
+}
+.b-area-standard.ja .b-btn {
+  width: 63px;
+  height: 14px;
+  padding: 6px 0 0 21px;
+}
+.b-area-standard .b-btn:hover {
+  color: #193A68;
+  background: url("/images/entry-button/bbtn-l_v3.png") left -20px no-repeat;
+  background-size: 80px 40px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio:2),(min-resolution: 2dppx){
+  .b-area-standard .b-btn, .b-area-standard .b-btn:hover {
+    background-image: url("/images/entry-button/bbtn-l_v3@2x.png");
+  }
+}
+.b-area-standard.vertical .b-count {
+  top: 0px;
+  width: 70px;
+  height: 31px;
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #B0C1D8;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 4px;
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 31px;
+  text-align: center;
+  color: #2D4C86;
+  display: block;
+}
+.b-area-standard.vertical .b-count:after,
+.b-area-standard.vertical .b-count:before {
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  right: 100%;
+  position: absolute;
+  width: 0;
+}
+.b-area-standard.vertical .b-count:after {
+  border-width: 4px;
+  border-top-color: #FFF;
+  top: 31px;
+  left: 35px;
+}
+.b-area-standard.vertical .b-count:before {
+  border-width: 5px;
+  border-top-color: #B0C1D8;
+  top: 32px;
+  left: 34px;
+}
+.b-count:hover {
+  color: #193A68;
+}

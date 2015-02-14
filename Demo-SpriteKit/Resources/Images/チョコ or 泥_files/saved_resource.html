@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- saved from url=(0110)http://cdn.api.b.hatena.ne.jp/entry/button/?url=http%3A%2F%2Fchoco-or-doro.herokuapp.com&layout=simple-balloon -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8">
+  <link rel="canonical" href="http://b.hatena.ne.jp/entry/choco-or-doro.herokuapp.com/">
+  <title>はてなブックマークボタン</title>
+  <link rel="stylesheet" href="reset.css" type="text/css" media="all">
+  <link rel="stylesheet" href="entry-button.css" type="text/css" media="all">
+  <script>
+    function postMessageToParentWin(type, dataStr, useFallback) {
+        var match = window.name.match(/^(\w+)\|((https?:\/\/[^\/?#]+)[^#]*)/);
+        if (!match) return;
+        if (window.postMessage) {
+            window.parent.postMessage('HBMessage@{"type": "' + type + '", "data": ' + dataStr + '}', match[3]);
+            return;
+        }
+        if (useFallback) {
+            var url = match[2] + "#HBMessage-" + match[1] + "-" + type + "/" + dataStr;
+            try {
+                window.parent.location.replace(url);
+            } catch (ex) {
+                window.parent.location.href = url;
+            }
+        }
+    }
+    function clickHandler() {
+        postMessageToParentWin("click", "null", true);
+    }
+  </script><style type="text/css"></style>
+  </head><body onkeypress="if (event.keyCode === 13) { clickHandler(); return false; }">
+    <div class="b-area-simple en">
+      <a href="http://b.hatena.ne.jp/entry/choco-or-doro.herokuapp.com/" class="b-btn" target="_top" title="このエントリーをはてなブックマークに追加" onclick="if ((event.which || event.button) &lt;= 1) { clickHandler(); return false; }">
+        <span>Bookmark</span>
+      </a>
+      <a href="http://b.hatena.ne.jp/entry/choco-or-doro.herokuapp.com/" class="b-count" target="_blank">0</a>
+    </div>
+    <script>
+        (function () {
+            function f() {
+                var elem = document.body.getElementsByTagName("div")[0];
+                var width = elem.offsetWidth;
+                var sizeJsonStr = '{ "width": ' + width + '}';
+                postMessageToParentWin("resize", sizeJsonStr, false);
+            }
+            if (window.addEventListener) {
+                window.addEventListener("load", function el(evt) {
+                    window.removeEventListener("load", el, false);
+                    f();
+                }, false);
+            } else if (window.attachEvent) {
+                var elForWin = function (evt) {
+                    window.detachEvent("onload", elForWin);
+                    f();
+                };
+                window.attachEvent("onload", elForWin);
+            }
+        }).call(this);
+    </script>
+  
+
+</body></html>
