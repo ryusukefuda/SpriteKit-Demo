@@ -24,7 +24,7 @@ class UIScene: SKScene {
         
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         
         for touch: AnyObject in touches {
@@ -41,7 +41,7 @@ class UIScene: SKScene {
     func fireScaleSpark(name:String, location:CGPoint, scale:CGFloat){
         let path = NSBundle.mainBundle().pathForResource(name, ofType: "sks")
         var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = location
         self.addChild(particle)
         let scale = SKAction.scaleTo(scale, duration: 0.2)
@@ -54,7 +54,7 @@ class UIScene: SKScene {
     func infoAlert(point:CGPoint, delay:Double, callBack:() -> Void) {
         let path = NSBundle.mainBundle().pathForResource("BlackSmoke", ofType: "sks")
         var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = point
         self.addChild(particle)
         
@@ -74,7 +74,7 @@ class UIScene: SKScene {
         
         let path = NSBundle.mainBundle().pathForResource(type, ofType: "sks")
         var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = posi
         self.addChild(particle)
         
@@ -95,7 +95,7 @@ class UIScene: SKScene {
     func tapCircle(point:CGPoint) {
         let path = NSBundle.mainBundle().pathForResource("GreyBokeh", ofType: "sks")
         var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = point
         self.addChild(particle)
         
@@ -109,7 +109,7 @@ class UIScene: SKScene {
     func fireHeart(point:CGPoint) {
         let path = NSBundle.mainBundle().pathForResource("heartSpark", ofType: "sks")
         let sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = point
         
         
@@ -125,7 +125,7 @@ class UIScene: SKScene {
     func manga() {
         let path = NSBundle.mainBundle().pathForResource("Manga_01", ofType: "sks")
         var sceneData = NSData(contentsOfFile: path!, options: .DataReadingMappedIfSafe, error: nil)!
-        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as SKEmitterNode
+        let particle = NSKeyedUnarchiver.unarchiveObjectWithFile(path!) as! SKEmitterNode
         particle.position = CGPointMake(centerX, 200)
         self.addChild(particle)
 

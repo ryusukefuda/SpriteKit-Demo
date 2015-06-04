@@ -21,7 +21,7 @@ class CustomAlertView: UIView {
     override init(frame: CGRect) {
         super.init(frame:frame)
         
-        let customAlertView:UIView = UINib(nibName: "CustomAlertView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as UIView
+        let customAlertView:UIView = UINib(nibName: "CustomAlertView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! UIView
         customAlertView.frame = frame
         
         self.addSubview(customAlertView)

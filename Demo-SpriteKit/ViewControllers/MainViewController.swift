@@ -34,19 +34,19 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         var vc:UIViewController!
         switch indexPath.row {
         case 0:
-            vc = sb.instantiateViewControllerWithIdentifier("ButtonViewController") as UIViewController
+            vc = sb.instantiateViewControllerWithIdentifier("ButtonViewController") as! UIViewController
             break
         case 1:
-            vc = sb.instantiateViewControllerWithIdentifier("AlertViewController") as UIViewController
+            vc = sb.instantiateViewControllerWithIdentifier("AlertViewController") as! UIViewController
             break
         case 2:
-            vc = sb.instantiateViewControllerWithIdentifier("GestureViewController") as UIViewController
+            vc = sb.instantiateViewControllerWithIdentifier("GestureViewController") as! UIViewController
             break
         case 3:
-            vc = sb.instantiateViewControllerWithIdentifier("MangaViewController") as UIViewController
+            vc = sb.instantiateViewControllerWithIdentifier("MangaViewController") as! UIViewController
             break
         case 4:
-            vc = sb.instantiateViewControllerWithIdentifier("BlurViewController") as UIViewController
+            vc = sb.instantiateViewControllerWithIdentifier("BlurViewController") as! UIViewController
             break
         default:
             break

@@ -23,7 +23,7 @@ class GestureViewController: BaseViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         for touch: AnyObject in touches {
             let location = touch.locationInView(self.view)
